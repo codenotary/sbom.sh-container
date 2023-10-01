@@ -1,0 +1,11 @@
+# Use the prebuilt image
+FROM sbom.sh:cmd 
+
+# add main script
+COPY sbom.sh /usr/local/bin/sbom.sh
+RUN chmod +x /usr/local/bin/sbom.sh
+ENV SBOM_SH_SERVER="https://sbom.sh"
+
+# RUN Entrypoint Script sbom.sh
+ENTRYPOINT ["/usr/local/bin/sbom.sh"]
+
